@@ -1,0 +1,72 @@
+/* /styles/globals.css */
+
+.main-section {
+  text-align: center;
+  padding: 20px;
+  background: #f0f5f1; /* light greenish background color */
+}
+
+.main-section section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(240, 255, 240, 0.9); /* light greenish-white background for content sections */
+}
+
+.main-section h2, .main-section p {
+  color: #333; /* dark grey color for better readability */
+}
+
+.image-container {
+  width: 100%;
+  height: auto;
+}
+
+.accommodation-types {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.accommodation {
+  margin: 20px;
+  flex: 1 1 300px; /* Flex property to make the items responsive */
+  max-width: 400px;
+}
+
+.accommodation h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity p {
+  max-width: 800px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .accommodation-types {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .activity p {
+    text-align: center;
+  }
+
+  .main-section section {
+    padding: 10px;
+  }
+}
