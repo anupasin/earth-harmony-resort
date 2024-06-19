@@ -429,6 +429,7 @@ body.menu-open .hamburger::after {
 @media screen and (max-width: 1290px) {
   .fancy-text-2 {
     font-size: 3rem; /* Larger font size for a fancy look */
+    white-space: normal;
   }
   .fancy-text-1 {
     font-size: 2rem; /* Larger font size for a fancy look */
