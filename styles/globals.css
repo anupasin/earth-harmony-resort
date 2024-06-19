@@ -1,25 +1,180 @@
-/* /styles/globals.css */
+/* Global styles and resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f5f1; /* Light green background for the body */
+}
+
+a {
+  text-decoration: none;
+  color: #4caf50;
+}
+
+/* Container styles */
+body .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+ 
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Consistent padding in mobile view */
+  }
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4caf50;
+  padding: 10px 20px;
+  width: 100%;
+  position: relative; /* This ensures that child elements with absolute positioning are positioned relative to this container */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 0; /* Adjust padding for mobile */
+  }
+}
+
+.navbar a {
+  color: white;
+  margin: 0 10px;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .navbar a {
+    padding: 10px 10px; /* Smaller padding for smaller screens */
+  }
+}
+
+/* Hero section styles */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    top: 40%;
+    padding: 10px;
+  }
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Georgia", serif;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  color: #d4edda;
+  font-family: "Georgia", serif;
+}
+
+/* Main section styles */
+.main {
+  background-color: #ffffff; /* Ensuring main section has white background */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px 0;
+  }
+}
 
 .main-section {
   text-align: center;
   padding: 20px;
-  background: #f0f5f1; /* light greenish background color */
+  background: #f0f5f1; /* Adjusted to light green for consistency */
 }
 
 .main-section section {
   margin-bottom: 40px;
   padding: 20px;
   border-radius: 10px;
-  background: rgba(240, 255, 240, 0.9); /* light greenish-white background for content sections */
+  background: rgba(240, 255, 240, 0.9);
 }
 
-.main-section h2, .main-section p {
-  color: #333; /* dark grey color for better readability */
+.main-section h2 {
+  font-size: 2rem; /* Larger font size */
+  color: #4caf50; /* Harmonious green to match your theme */
+  font-family: 'Georgia', serif; /* Stylish serif font */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px 0; /* Adequate spacing around the heading */
+  text-align: center; /* Center-align the headings */
 }
 
-.image-container {
-  width: 100%;
-  height: auto;
+.main-section p {
+  color: #333;
+}
+
+.main-section .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .accommodation-types {
@@ -30,8 +185,31 @@
 
 .accommodation {
   margin: 20px;
-  flex: 1 1 300px; /* Flex property to make the items responsive */
   max-width: 400px;
+  width: 100%;
+  overflow: hidden; /* Hides parts of the image that overflow the container */
+  }
+
+@media (max-width: 768px) {
+  .accommodation {
+    margin: 10px;
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+.accommodation .image-container {
+  height: 200px; /* Fixed height for all images */
+  width: 100%; /* Full width of the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.accommodation img {
+  width: auto; /* Adjust width automatically */
+  height: 100%; /* Full height of the container */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 .accommodation h3 {
@@ -57,16 +235,202 @@
 }
 
 @media (max-width: 768px) {
+  .activity p {
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+
+.intro-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Georgia", serif;
+}
+
+@media (max-width: 768px) {
   .accommodation-types {
     flex-direction: column;
     align-items: center;
   }
 
-  .activity p {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+}
+
+/* Hamburger Menu Styles */
+/* Hamburger Menu Styles */
+/* Hamburger Menu Styles */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+}
+
+.hamburger {
+  background-color: #fff;
+  height: 2px;
+  width: 20px;
+  margin: 4px auto;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before, .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  bottom: -6px;
+}
+
+body.menu-open .hamburger {
+  background-color: transparent;
+}
+
+body.menu-open .hamburger::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+body.menu-open .hamburger::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #4caf50;
     text-align: center;
   }
 
-  .main-section section {
+  .nav-links.open {
+    display: flex;
+    z-index: 1000;
+  }
+
+  .navbar a {
     padding: 10px;
+    display: block;
+  }
+}
+
+/* Add styles for the About Us page */
+.about-container {
+  height: 100vh; /* Set container height to full viewport height */
+}
+
+
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 800px) {
+  .about-content {
+    display: block; /* Change to block layout on mobile */
+  }
+
+  .about-image {
+    display: block; /* Ensure the image is displayed */
+    height: 100vh; /* Set a specific height for the image container */
+    margin-top: 20px; /* Add margin to separate image from text */
+    min-width: 480px;
+    }
+}
+
+.about-text {
+  padding: 20px;
+  background-color: #f9f9f9;
+  align-self: center;
+  justify-self: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-heading-lg {
+  font-size: 2.5rem; /* Increase font size */
+  color: #4caf50; /* Match theme color */
+}
+
+.about-heading-sm {
+  font-size: 1.75rem; /* Increase font size */
+  color: #4caf50; /* Match theme color */
+}
+
+.about-paragraph {
+  font-size: 1.2rem; /* Increase font size */
+  color: #4caf50; /* Match theme color */
+}
+
+.fancy-text-1 {
+  font-size: 2.5rem; /* Larger font size for a fancy look */
+  color: white; /* Font color for readability over images */
+  position: absolute;
+  text-shadow: 2px 2px 5px black;
+  top: 80%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  padding: 10px; /* Add padding for better visibility */
+  mix-blend-mode: overlay; /* Blend text with background */
+  background-blend-mode: overlay; /* Blend background with text */
+}
+
+.fancy-text-2 {
+  font-size: 3.5rem; /* Larger font size for a fancy look */
+  color: white; /* Font color for readability over images */
+  position: absolute;
+  text-shadow: 2px 2px 5px black;
+  top: 10%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px; /* Add padding for better visibility */
+  mix-blend-mode: overlay; /* Blend text with background */
+  background-blend-mode: overlay; /* Blend background with text */
+  white-space: nowrap; /* Prevent line breaks */
+}
+@media screen and (max-width: 1290px) {
+  .fancy-text-2 {
+    font-size: 3rem; /* Larger font size for a fancy look */
+  }
+  .fancy-text-1 {
+    font-size: 2rem; /* Larger font size for a fancy look */
   }
 }

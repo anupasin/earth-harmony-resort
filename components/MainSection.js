@@ -37,7 +37,114 @@ const MainSection = () => {
           </div>
         </div>
       </section>
-      {/* Other sections remain the same */}
+      <section className="volunteer">
+        <h2>Join Our Community</h2>
+        <div className="image-container">
+          <Image
+            src="/volunteer.jpg"
+            alt="Volunteer"
+            layout="responsive"
+            width={800}
+            height={400}
+          />
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          vel ligula et turpis tempus facilisis.
+        </p>
+      </section>
+      <section className="sustainability">
+        <h2>Our Commitment to Sustainability</h2>
+        <div className="image-container">
+          <Image
+            src="/sustainability.jpg"
+            alt="Sustainability"
+            layout="responsive"
+            width={800}
+            height={400}
+          />
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          vel ligula et turpis tempus facilisis.
+        </p>
+      </section>
+      <section className="dining">
+        <h2>Farm-to-Table Dining</h2>
+        <div className="image-container">
+          <Image
+            src="/dining.jpg"
+            alt="Dining"
+            layout="responsive"
+            width={800}
+            height={400}
+          />
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          vel ligula et turpis tempus facilisis.
+        </p>
+      </section>
+      <section className="activities">
+        <h2>Explore and Enjoy</h2>
+        <div className="activity">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque vel ligula et turpis tempus facilisis.
+          </p>
+          <div className="image-container">
+            <Image
+              src="/activities.jpg"
+              alt="Activities"
+              layout="responsive"
+              width={800}
+              height={400}
+            />
+          </div>
+        </div>
+      </section>
+      <section className="reviews">
+        <h2>What Our Guests Say</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          vel ligula et turpis tempus facilisis.
+        </p>
+      </section>
+      <section className="gallery">
+        <h2>Gallery</h2>
+        <div className="gallery-grid">
+          <Image
+            src="/gallery1.jpg"
+            alt="Gallery Image 1"
+            layout="responsive"
+            width={400}
+            height={300}
+          />
+          <Image
+            src="/gallery2.jpg"
+            alt="Gallery Image 2"
+            layout="responsive"
+            width={400}
+            height={300}
+          />
+        </div>
+      </section>
+      <section className="contact">
+        <h2>Get in Touch</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          vel ligula et turpis tempus facilisis.
+        </p>
+        <div className="image-container">
+          <Image
+            src="/map.jpg"
+            alt="Map"
+            layout="responsive"
+            width={800}
+            height={400}
+          />
+        </div>
+      </section>
     </div>
   );
 };
