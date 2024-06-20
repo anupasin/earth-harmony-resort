@@ -370,7 +370,7 @@ body.menu-open .hamburger::after {
     display: block; /* Ensure the image is displayed */
     height: 100vh; /* Set a specific height for the image container */
     margin-top: 20px; /* Add margin to separate image from text */
-    min-width: 480px;
+    min-width: 320px;
     }
 }
 
