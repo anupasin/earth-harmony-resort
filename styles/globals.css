@@ -262,15 +262,13 @@ body .container {
 }
 
 /* Hamburger Menu Styles */
-/* Hamburger Menu Styles */
-/* Hamburger Menu Styles */
 .menu-icon {
   display: none;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 50%; /* Center vertically */
   right: 20px;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* Adjust to center */
   z-index: 1000;
 }
 
@@ -284,7 +282,7 @@ body .container {
   background-color: #fff;
   height: 2px;
   width: 20px;
-  margin: 4px auto;
+  margin: 4px auto; /* Center the hamburger lines */
   position: relative;
   transition: all 0.3s ease-in-out;
 }
@@ -299,11 +297,11 @@ body .container {
 }
 
 .hamburger::before {
-  top: -6px;
+  top: -6px; /* Adjust spacing for top line */
 }
 
 .hamburger::after {
-  bottom: -6px;
+  bottom: -6px; /* Adjust spacing for bottom line */
 }
 
 body.menu-open .hamburger {
@@ -440,4 +438,95 @@ body.menu-open .hamburger::after {
     font-size: 2rem; /* Larger font size for a fancy look */
     left:  53%
   }
+}
+
+/* Styles for Contact Page */
+
+.contact-container {
+  height: 100vh;
+}
+
+.contact-page {
+    text-align: center; /* Center text */
+    padding: 20px; /* Add padding */
+}
+
+.contact-page h1 {
+    font-size: 2rem; /* Adjust headline size */
+    color: #333; /* Set headline color */
+}
+
+.contact-page p {
+    font-size: 1rem; /* Adjust paragraph size */
+    color: #666; /* Set paragraph color */
+}
+
+/* Styles for Rooms Page */
+
+.rooms-container {
+  height: 100vh;
+}
+
+.rooms-page {
+    text-align: center; /* Center text */
+    padding: 20px; /* Add padding */
+}
+
+.rooms-page h1 {
+    font-size: 2rem; /* Adjust headline size */
+    color: #333; /* Set headline color */
+}
+
+.rooms-page p {
+    font-size: 1rem; /* Adjust paragraph size */
+    color: #666; /* Set paragraph color */
+}
+
+.room-images {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center images */
+    flex-wrap: wrap; /* Allow wrapping of images */
+    gap: 20px; /* Space between images */
+}
+
+.room-images img {
+    flex: 1 1 300px; /* Allow images to grow and shrink, with a base width */
+    max-width: 100%; /* Ensure images do not exceed their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styles for Volunteer Page */
+.volunteer-container {
+  height: 100vh;
+}
+
+.volunteer-page {
+    text-align: left; /* Left text */
+    padding: 20px; /* Add padding */
+}
+
+.volunteer-page h1 {
+  text-align: center; /* Center headline */
+    font-size: 2rem; /* Adjust headline size */
+    color: #333; /* Set headline color */
+}
+
+.volunteer-page p {
+    font-size: 1rem; /* Adjust paragraph size */
+    color: #666; /* Set paragraph color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-page h1, .rooms-page h1, .volunteer-page h1 {
+        font-size: 1.5rem; /* Smaller headline on mobile */
+    }
+
+    .contact-page p, .rooms-page p, .volunteer-page p {
+        font-size: 0.9rem; /* Smaller text on mobile */
+    }
+
+    .room-images {
+        flex-direction: column; /* Stack images on mobile */
+    }
 }
