@@ -1,5 +1,7 @@
 import Navbar from "../components/Navbar";
 import Image from "next/image";
+import Footer from '../components/Footer';
+
 
 const About = () => {
   return (
@@ -19,6 +21,7 @@ const About = () => {
           <div className="fancy-text-2">Earth Harmony Resort</div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

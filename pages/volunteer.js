@@ -1,25 +1,34 @@
 import Link from "next/link";
-import Image from "next/image"; // Added for image handling
-import volunteerImage from "../public/volunteer.jpg"; // Importing the image
-import Navbar from "../components/Navbar"; // Importing Navbar component
+import Image from "next/image";
+import volunteerImage from "../public/volunteer.jpg";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Volunteer = () => {
   return (
     <div className="volunteer-container">
-      <Navbar /> {/* Using Navbar component */}
+      <Navbar />
       <div className="volunteer-page">
-        {" "}
-        {/* Added class for styling */}
-        <Image src={volunteerImage} alt="Volunteer" layout="responsive" />{" "}
-        {/* Responsive image */}
-        <h1>Lorem Ipsum Headline</h1> {/* Dummy headline */}
-        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Est eros nisi ligula aliquet duis vehicula fames hendrerit. Fringilla integer hac orci ut ex tortor consequat natoque leo. Sem turpis magnis nisi vestibulum faucibus amet potenti. Cubilia vitae tempor vestibulum nam suspendisse; nam curae. Urna varius fermentum placerat vestibulum auctor facilisi. Neque inceptos primis eleifend lacus, ornare inceptos laoreet. Apretium nascetur rutrum ornare ante malesuada. Augue eu nascetur habitant; sociosqu varius hendrerit efficitur id condimentum. Molestie diam ornare ornare fermentum sociosqu enim; iaculis aliquet laoreet.
-
-Dui vulputate maximus sit; metus finibus felis hac! Nascetur imperdiet eget pharetra nostra enim arcu lacus fusce. Tempor ante ut vulputate curae, ut consectetur dui phasellus posuere. Purus posuere maecenas parturient nibh netus imperdiet maximus non ornare. Torquent odio laoreet tempor est praesent placerat commodo mi quis. Ac eget risus litora pretium habitasse magnis nullam. Fusce quam donec nibh aliquam tempor class porta morbi. Ut aptent enim tellus rhoncus phasellus auctor.
-
-Tristique massa eros natoque dolor curae per imperdiet fames. Felis vel cursus habitant ullamcorper dictumst rhoncus. Taciti dapibus purus conubia inceptos ullamcorper neque. Ultrices aliquet nisi luctus; erat ligula porta dui blandit. Urna eros tristique vestibulum eu, donec sodales. Lobortis feugiat congue egestas magna eros tellus. At sapien orci arcu fermentum ut aliquam ligula.</p>{" "}
-        {/* Dummy text */}
+        <h1>Join Our Volunteer Team</h1>
+        <div className="volunteer-content">
+          <p>
+            At Earth Harmony Resort, we're passionate about making a positive impact on our community and the environment. Our volunteer program is designed to bring like-minded individuals together to make a difference. Whether you're looking to give back, learn new skills, or simply be part of a dynamic team, we invite you to join us on this journey.
+          </p>
+          <p>
+            As a volunteer, you'll have the opportunity to participate in a variety of activities, from conservation efforts to community outreach programs. You'll work alongside our dedicated staff and like-minded volunteers to make a real difference in the lives of others. And, as a bonus, you'll get to enjoy the beautiful surroundings and tranquil atmosphere of our resort.
+          </p>
+          <p>
+            We're looking for individuals who share our values of sustainability, compassion, and community. If you're interested in joining our volunteer team, please don't hesitate to reach out. We can't wait to hear from you!
+          </p>
+        </div>
+        <Image
+          src={volunteerImage}
+          alt="Volunteer"
+          layout="responsive"
+          className="volunteer-image"
+        />
       </div>
+      <Footer />
     </div>
   );
 };

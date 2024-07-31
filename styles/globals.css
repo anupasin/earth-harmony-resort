@@ -9,7 +9,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f0f5f1;
 }
 
@@ -41,6 +41,10 @@ body .container {
   padding: 10px 20px;
   width: 100%;
   position: relative;
+}
+
+.navbar .logo {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
@@ -84,8 +88,17 @@ body .container {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(198, 226, 181, 0.25);
   z-index: 1;
+}
+
+.hero-image {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-image.fade-in {
+  opacity: 1;
 }
 
 .hero-text {
@@ -114,6 +127,9 @@ body .container {
   margin: 0;
   color: #ffffff;
   font-family: "Georgia", serif;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .hero-text p {
@@ -121,14 +137,18 @@ body .container {
   margin-top: 10px;
   color: #d4edda;
   font-family: "Georgia", serif;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* Main section styles */
-.main {
-  background-color: #ffffff;
-  padding: 40px 20px;
-  text-align: center;
+.hero-text h1.active,
+.hero-text p.active {
+  opacity: 1;
+  transform: translateX(0);
 }
+/* Main section styles */
+
 
 .footer {
   background-color: #4caf50;
@@ -160,7 +180,7 @@ body .container {
 .main-section h2 {
   font-size: 2rem;
   color: #4caf50;
-  font-family: 'Georgia', serif;
+  font-family: 'Roboto', sans-serif;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
   text-align: center;
@@ -168,6 +188,7 @@ body .container {
 
 .main-section p {
   color: #333;
+  font-family: "Roboto", sans-serif;
 }
 
 .main-section .image-container {
@@ -187,6 +208,10 @@ body .container {
   max-width: 400px;
   width: 100%;
   overflow: hidden;
+}
+
+.accommodation-text {
+    text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -229,7 +254,6 @@ body .container {
 }
 
 .activity p {
-  max-width: 800px;
   text-align: left;
 }
 
@@ -246,7 +270,14 @@ body .container {
   color: #4caf50;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  font-family: "Georgia", serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  color: #d4edda;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -439,60 +470,76 @@ body.menu-open .hamburger::after {
 }
 
 /* Styles for Contact Page */
-.contact-container {
-  position: relative;
-  min-height: 100vh;
+.page-container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.contact-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/sustainability.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 60px 20px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.contact-container.loaded {
+  opacity: 1;
 }
 
 .contact-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .contact-content h1 {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #333;
 }
 
 .contact-form {
-  width: 100%;
-  max-width: 500px;
-  background-color: white;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f8f8f8; /* Add a subtle background color */
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #333;
+  font-weight: bold;
+  color: #555;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .form-group textarea {
@@ -501,79 +548,194 @@ body.menu-open .hamburger::after {
 }
 
 .contact-form button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 12px 20px;
+  background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
 }
 
 @media (max-width: 768px) {
-  .contact-form {
-    padding: 20px;
+  .contact-container {
+    padding: 40px 20px;
+    /* Ensure no margins on mobile either */
+    margin: 0; 
+  }
+
+  .contact-content {
+    padding: 30px;
+  }
+  
+  .contact-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
   }
 }
-
 /* Styles for Rooms Page */
 .rooms-container {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f4f4f9; /* Subtle background color for a modern feel */
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
 }
 
 .rooms-page {
-    text-align: center;
-    padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .rooms-page h1 {
-    font-size: 2rem;
-    color: #333;
+  font-size: 2.5rem;
+  color: #2c3e50; /* Darker shade for a sophisticated look */
+  margin-bottom: 20px;
 }
 
 .rooms-page p {
-    font-size: 1rem;
-    color: #666;
+  font-size: 1.1rem;
+  text-align: left;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-.room-images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.room-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  /* New styles for smaller screens */
+  @media (max-width: 768px) { /* Adjust breakpoint as needed */
+    flex-direction: column;
+    align-items: center; /* Center the cards vertically */
+  }
 }
 
-.room-images img {
-    flex: 1 1 300px;
-    max-width: 100%;
-    height: auto;
+
+.room-card {
+  flex: 1 1 300px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  height: 350px; /* Set a fixed height */
+}
+
+
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.room-image {
+  width: 100%;
+  height: 200px !important;
+  object-fit: cover;
+}
+
+
+
+.room-details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ensures this section stretches to fill the card */
+}
+
+.room-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  margin-top: 0; /* Ensures consistent spacing */
+}
+
+.room-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  text-align: center; /* Ensures text is centered */
 }
 
 /* Styles for Volunteer Page */
 .volunteer-container {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f9f9f9; /* Light background color for a modern look */
 }
 
 .volunteer-page {
-    text-align: left;
-    padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .volunteer-page h1 {
-  text-align: center;
-    font-size: 2rem;
-    color: #333;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
-.volunteer-page p {
-    font-size: 1rem;
-    color: #666;
+.volunteer-content {
+  text-align: left;
+  margin-bottom: 30px;
+  line-height: 1.6; /* Improve readability */
 }
 
+.volunteer-content p {
+  font-size: 1.1rem;
+  color: #4d4d4d;
+  margin-bottom: 15px;
+}
+
+.volunteer-image {
+  max-height: 70vh; /* 70% of the viewport height */
+  width: auto;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 20px;
+}
+
+.sustainability-text {
+  text-align: left;
+}
+.dining-text {
+  text-align: left;
+}
+.reviews-text {
+  text-align: left;
+}
+.contact-text {
+  text-align: left;
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
     .contact-page h1, .rooms-page h1, .volunteer-page h1 {
@@ -588,3 +750,43 @@ body.menu-open .hamburger::after {
         flex-direction: column;
     }
 }
+@media (max-width: 768px) {
+  .room-image {
+    height: 150px; /* Adjusted height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .room-image {
+    height: 120px; /* Adjusted height for mobile devices */
+  }
+}
+
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.fade-in-section:not(.is-visible) {
+  transition-delay: 0.2s;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+/* Add this new rule */
