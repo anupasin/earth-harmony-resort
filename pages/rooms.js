@@ -16,10 +16,10 @@ const Rooms = () => {
           At Earth Harmony Resort, we offer a range of cozy and comfortable accommodations to suit your needs. From our Standard Rooms to our luxurious Suites, each room is designed to provide a peaceful and rejuvenating retreat from the stresses of everyday life.
         </p>
         <p>
-          Our rooms feature plush bedding, crisp linens, and modern amenities to ensure a comfortable and relaxing stay. And, with breathtaking views of our surrounding gardens and mountains, you'll feel like you're a world away from the hustle and bustle of city life.
+          Our rooms feature plush bedding, crisp linens, and modern amenities to ensure a comfortable and relaxing stay. And, with breathtaking views of our surrounding gardens and mountains, youll feel like youre a world away from the hustle and bustle of city life.
         </p>
         <p>
-          Whether you're looking for a romantic getaway, a family vacation, or a solo retreat, we have the perfect room for you. So why wait? Book your stay with us today and experience the tranquility and beauty of Earth Harmony Resort.
+          Whether youre looking for a romantic getaway, a family vacation, or a solo retreat, we have the perfect room for you. So why wait? Book your stay with us today and experience the tranquility and beauty of Earth Harmony Resort.
         </p>
         <div className="room-cards">
           <div className="room-card">
